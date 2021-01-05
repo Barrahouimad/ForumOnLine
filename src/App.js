@@ -1,13 +1,12 @@
 import Maincommponent from './views/MainComponent';
-import React from 'react';
-//import { BrowserRouter } from  'react-router-dom'
+import { BrowserRouter } from  'react-router-dom';
 function App() {
   return (
-    //<BrowserRouter>
-       <div>
+    <BrowserRouter>
+    
         <Maincommponent/>
-      </div>
-   // </BrowserRouter>
+   
+    </BrowserRouter>
   );
 
 }
