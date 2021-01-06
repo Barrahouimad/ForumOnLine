@@ -40,7 +40,7 @@ code {
   #socialmedia{
     display :flex;
     flex-direction:column;
-    justify-content:space-between;
+    justify-content:space-around;
     padding-top: 140px;
     padding-left: 1030px;
   }
@@ -49,6 +49,28 @@ code {
     width:600px;
   }
   #login  {
-   padding-top: 70px;
+   padding-top: 100px;
    width:600px;
   }
+#HomeNav{color:#CFCFCF;}
+ #HomeNav:hover{
+   color:red;
+ }
+#JobsNav{color:#CFCFCF;}
+ #JobsNav:hover{
+   color:red;
+ }
+#ExpoNav{color:#CFCFCF;}
+ #ExpoNav:hover{
+   color:red;
+ }
+#SessionNav{color:#CFCFCF;}
+ #SessionNav:hover{
+   color:red;
+ }
+ .effet:hover{
+transform:scale(1.15);
+ }
+ .effet{
+  transform:scale(1);
+   }

@@ -3,3 +3,9 @@
 #text{
     font-family:'Montserrat', sans-serif;
 }
+#btn1:hover{
+   background-color: grey;
+   }
+#btn2:hover{
+   background-color: grey;
+   }

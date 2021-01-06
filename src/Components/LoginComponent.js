@@ -1,32 +1,43 @@
-import react from 'react';
+import react , {useState} from 'react';
 import {Form, FormGroup,FormFeedback,FormText,Label,Input, Button} from 'reactstrap';
 
 
 
-const required = (val) => val && val.length;
-const maxLength = (len) => (val) => !(val) || (val.length <= len);
-const minLength = (len) => (val) => val && (val.length >= len);
-const isNumber = (val) => !isNaN(Number(val));
-const validEmail = (val) => /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(val);
-
-function LoginComponent(){
-
+const LoginComponent=()=>{
+    const [email,setemail]=useState('');
+    const [emailtouched,setemailtouched]=useState(false);
+    function validate(email,emailtouched) {
+        const errors = {
+            email: ''
+        };
+    
+     if(emailtouched && email.split('').filter(x => x === '@').length !== 1)
+           {errors.email = 'Email should contain a @';} 
+    
+        return errors;
+    }
+    function test(){
+        setemailtouched(!emailtouched)
+        console.log("hello   "+emailtouched);
+    }
+    var eemail= email+'';
+    const error=validate(eemail,emailtouched);
 return(
+    
 <div id="login" className="container bg-light">
     <Form >
        <FormGroup row>
-         <Input type="text" placeholder="Username"   validators={{
-                                            required, minLength: minLength(3), maxLength: maxLength(15)
-                                        }}
-                                         />
-         
+         <Input type="text" placeholder="Username"  
+                                        valid={error.email === ''}
+                                        invalid={error.email !== ''}
+                                        onBlur={()=>test()}
+                                        innerRef={(input) => setemail(input) } />
+         <FormFeedback>{error.email}</FormFeedback>
+       
        </FormGroup>
        <FormGroup row>
-         <Input type="password" placeholder="Password"validators={{
-                                            required, minLength: minLength(3), maxLength: maxLength(15)
-                                        }}
-                                         />
-           
+         <Input type="password" placeholder="Password" />
+         
        </FormGroup>
        <FormGroup className="ml-5"row>
          <Button href={"/home"} >Connect</Button>

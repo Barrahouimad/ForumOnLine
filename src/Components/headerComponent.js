@@ -22,16 +22,16 @@ function HeadeComponent(){
      
          <Nav className="mr-auto"  navbar>
             <NavItem>
-              <NavLink href="/home" style={{color:'#CFCFCF'}}  >HOME</NavLink>
+              <NavLink id="HomeNav" href="/home"   >HOME</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/Session" style={{color:'#CFCFCF'}} >SESSION</NavLink>
+              <NavLink id="SessionNav" href="/Session"  >SESSION</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/Expo" style={{color:'#CFCFCF'}} >EXPO</NavLink>
+              <NavLink id="ExpoNav" href="/Expo" >EXPO</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/Jobs" style={{color:'#CFCFCF'}} >JOBS</NavLink>
+              <NavLink id="JobsNav" href="/Jobs"  >JOBS</NavLink>
             </NavItem>
          </Nav>
        

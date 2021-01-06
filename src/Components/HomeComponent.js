@@ -27,10 +27,10 @@ function Home(){
             </div>
       
              <div id='buttons' className="row "> 
-                <div  id="btn1" style={{border :'2px solid ',fontSize:'35px',borderColor:'#CDCACA',color:'#CDCACA',paddingtop:"14px",paddingLeft:"14px"}}>
+                <div  id="btn1" class ="effet" style={{border :'2px solid ',fontSize:'35px',borderColor:'#CDCACA',color:'#CDCACA',paddingtop:"14px",paddingLeft:"14px"}}>
                 <NavLink className="pt-1 text-light" href={"/Signup"}> Signup</NavLink>
                </div>
-               <div  id="btn2" style={{border:'2px solid ',borderright : "5px",fontSize:'35px',borderColor:'#CDCACA',color:'#CDCACA',paddingRight:"12px",paddingLeft:"14px"}}>
+               <div  id="btn2" class ="effet" style={{border:'2px solid ',borderright : "5px",fontSize:'35px',borderColor:'#CDCACA',color:'#CDCACA',paddingRight:"12px",paddingLeft:"14px"}}>
                   <NavLink className="pt-1 text-light" href={"/Login"}> Log in</NavLink>
                </div>
               
