@@ -4,10 +4,9 @@ import { Navbar ,Jumbotron,NavbarToggler,NavLink,NavItem,Nav,Collapse,NavbarBran
 import { makeStyles } from '@material-ui/styles';
 const useStyles = makeStyles({
     root: {
-      background: 'linear-gradient(45deg, #FFFF 40%, #411430 100%)',
+      background: 'linear-gradient( to right, #100A2A, #411430)',
       border: 0,
-  
-      color: 'white',
+      color: 'white'
     },
   });
 
@@ -21,18 +20,18 @@ function HeadeComponent(){
    <Navbar expand="md" className={classes.root} >
       <NavbarBrand className="mr-auto" ><img src='assets/logo1.png' height="30" width="41"/></NavbarBrand>
      
-         <Nav className="mr-auto"navbar>
+         <Nav className="mr-auto"  navbar>
             <NavItem>
-              <NavLink href="/home">HOME</NavLink>
+              <NavLink href="/home" style={{color:'#CFCFCF'}}  >HOME</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/Session">SESSION</NavLink>
+              <NavLink href="/Session" style={{color:'#CFCFCF'}} >SESSION</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/Expo">EXPO</NavLink>
+              <NavLink href="/Expo" style={{color:'#CFCFCF'}} >EXPO</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/Jobs">JOBS</NavLink>
+              <NavLink href="/Jobs" style={{color:'#CFCFCF'}} >JOBS</NavLink>
             </NavItem>
          </Nav>
        
