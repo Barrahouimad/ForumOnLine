@@ -20,6 +20,10 @@ const LoginComponent=()=>{
         setemailtouched(!emailtouched)
         console.log("hello   "+emailtouched);
     }
+    function handlchange(event){
+        setemail(event.target.value);
+       
+    }
     var eemail= email+'';
     const error=validate(eemail,emailtouched);
 return(
@@ -31,7 +35,7 @@ return(
                                         valid={error.email === ''}
                                         invalid={error.email !== ''}
                                         onBlur={()=>test()}
-                                        innerRef={(input) => setemail(input) } />
+                                        onChange={(event)=>handlchange(event) } />
          <FormFeedback>{error.email}</FormFeedback>
        
        </FormGroup>
