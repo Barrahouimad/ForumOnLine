@@ -44,7 +44,8 @@ return(
          
        </FormGroup>
        <FormGroup className="ml-5"row>
-         <Button href={"/home"} >Connect</Button>
+         <Button href={"/home"} type="submit" >Connect</Button>
+         <Button  className="bg-success ml-5" href={"/signup"}>Sign up</Button>
        </FormGroup>
     </Form>
  </div>

@@ -4,9 +4,9 @@ import Home from '../Components/HomeComponent.js';
 import LoginComponent from '../Components/LoginComponent.js';
 import SignupComponent from '../Components/SignupComponent.js';
 import ExpoComponent from '../Components/ExpoComponent.js';
+import JobsComponent from '../Components/JobsComponent.js';
 import React from 'react';
 /*import WelcomeComponent from '../Components/WelcomeComponent.js';
-import JobsComponent from '../Components/JobsComponent.js';
 import SessionComponent from '../Components/SessionComponent.js';
 
  <Switch>
@@ -14,7 +14,6 @@ import SessionComponent from '../Components/SessionComponent.js';
        
        
        
-        <Route path='/Jobs' component={JobsComponent}/>
         <Route path='/Session' component={SessionComponent}/>
     </Switch>
 
@@ -32,6 +31,7 @@ function Maincommponent(){
         <Route path='/Login' component={LoginComponent}/>
         <Route path='/Signup' component={SignupComponent}/>
         <Route path='/Expo' component={ExpoComponent}/>
+        <Route path='/Jobs' component={JobsComponent}/>
         <Redirect path='/home'/>
      </Switch>
         </div>

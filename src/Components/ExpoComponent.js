@@ -9,7 +9,7 @@ const Cardi=expo.map((item)=>{
   <Card key={item.id} width="70px">
       <CardImg height="200px" width="10px" top src ={item.img}/>
       <CardBody>
-          <h5 id><bold>{item.name} </bold></h5>
+          <h5 class="titre"><bold>{item.name} </bold></h5>
           <p>{item.desc}</p>
       </CardBody>
   </Card>
@@ -17,7 +17,7 @@ const Cardi=expo.map((item)=>{
 });
 return(
  <div  id="text1">
-  <h1 className="pt-5 pl-5">FORUM <strong className="text-danger">EMI</strong> ENTREPRISES</h1>
+  <h1 className="pt-5 pl-5">EXPO FORUM <strong className="text-danger">EMI</strong> ENTREPRISES</h1>
   <div className="container pt-5">
       <div className="row">
           {Cardi}
