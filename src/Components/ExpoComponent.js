@@ -18,6 +18,8 @@ const Cardi=expo.map((item)=>{
 return(
  <div  id="text1">
   <h1 className="pt-5 pl-5">EXPO FORUM <strong className="text-danger">EMI</strong> ENTREPRISES</h1>
+  <h5 className="pl-5">Savoir plus sur les Startups, Sociétés
+Corps invitee au Forum</h5>
   <div className="container pt-5">
       <div className="row">
           {Cardi}

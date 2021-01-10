@@ -27,7 +27,7 @@ function Maincommponent(){
  return(<div>
       <HeadeComponent/>
       <Switch>
-        <Route path='/home' component={Home}/>
+        <Route path='/Home' component={Home}/>
         <Route path='/Login' component={LoginComponent}/>
         <Route path='/Signup' component={SignupComponent}/>
         <Route path='/Expo' component={ExpoComponent}/>

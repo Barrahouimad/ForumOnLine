@@ -8,13 +8,50 @@ export const jobs=[
     },
     { id:2,
        name:'Concepteur',
-       entreprise:'Banque Populaire',
+       entreprise:'CIH',
        desc:'travail temps plein faire ceci et cela ...',
        hashtags:['PFE','Rémunéré']
 
      },
      { id:3,
-       name:'Banque populaire',
+       name:'Developpeur',
+       entreprise:'CIH',
+       desc:'hbzekfZBFKzbizmV zbfZL FzgfkBMQDUHC UEmufekJFMZFMz fuîhfeJF%em',
+       hashtags:['PFE','Rémunéré']
+
+     },
+     { id:4,
+       name:'Developpeur',
+       entreprise:'Banque Populaire',
+       desc:'hbzekfZBFKzbizmV zbfZL FzgfkBMQDUHC UEmufekJFMZFMz fuîhfeJF%em',
+       hashtags:['PFE','Rémunéré']
+
+     },
+     { id:5,
+       name:'Contable',
+       entreprise:'CIH',
+       desc:'hbzekfZBFKzbizmV zbfZL FzgfkBMQDUHC UEmufekJFMZFMz fuîhfeJF%em',
+       hashtags:['PFE','Rémunéré']
+
+     }, 
+     { id:6,
+       name:'Ingénieur Informaticien',
+       entreprise:'Banque Populaire',
+       desc:'hbzekfZBFKzbizmV zbfZL FzgfkBMQDUHC UEmufekJFMZFMz fuîhfeJF%em',
+       hashtags:['PFE','Rémunéré']
+
+     }
+     , 
+     { id:7,
+       name:'Ingénieur Informaticien',
+       entreprise:'Banque Populaire',
+       desc:'hbzekfZBFKzbizmV zbfZL FzgfkBMQDUHC UEmufekJFMZFMz fuîhfeJF%em',
+       hashtags:['PFE','Rémunéré']
+
+     }
+     , 
+     { id:8,
+       name:'Ingénieur Informaticien',
        entreprise:'Banque Populaire',
        desc:'hbzekfZBFKzbizmV zbfZL FzgfkBMQDUHC UEmufekJFMZFMz fuîhfeJF%em',
        hashtags:['PFE','Rémunéré']

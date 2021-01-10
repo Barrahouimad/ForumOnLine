@@ -6,10 +6,13 @@ import { Link } from 'react-router-dom';
 import { RiFacebookBoxFill } from 'react-icons/ri';
 import {SiLinkedin} from 'react-icons/si';
 import {AiFillTwitterSquare} from 'react-icons/ai';
+import $ from 'jquery';
+
 
 import 'bootstrap-social/bootstrap-social.css';
+import { findDOMNode } from 'react-dom';
 function Home(){
-  
+ 
   return(
        <footer>
         
@@ -32,7 +35,7 @@ function Home(){
       
              <div id='buttons' className="row "> 
                 <div  id="btn1" class ="effet" style={{border :'2px solid ',fontSize:'35px',borderColor:'#CDCACA',color:'#CDCACA',paddingtop:"14px",paddingLeft:"14px"}}>
-                <NavLink className="pt-1 text-light" href={"/Signup"}> Signup</NavLink>
+                <NavLink className="pt-1 text-light" href={"/Signup"} > Signup</NavLink>
                </div>
                <div  id="btn2" class ="effet" style={{border:'2px solid ',borderright : "5px",fontSize:'35px',borderColor:'#CDCACA',color:'#CDCACA',paddingRight:"12px",paddingLeft:"14px"}}>
                   <NavLink className="pt-1 text-light" href={"/Login"}> Log in</NavLink>
