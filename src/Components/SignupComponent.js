@@ -84,7 +84,7 @@ return(
        </FormGroup>
        <FormGroup row>
          <Input type="email" placeholder="Email" valid={errors.email===''} invalid={errors.email!==''}
-           onBlur={()=>handlBlurname(!nametouched)}onChange={(event)=>handlchangeemail(event)}/>
+           onBlur={()=>handlBluremail(!nametouched)}onChange={(event)=>handlchangeemail(event)}/>
             <FormFeedback>{errors.email}</FormFeedback>
        </FormGroup> 
         

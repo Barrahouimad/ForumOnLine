@@ -1,8 +1,16 @@
-import react from 'react';
+import react ,{useState}from 'react';
 import {Card, CardBody, CardFooter,CardImg} from 'reactstrap';
-import {expo} from '../shared/expo';
+
 import '../expo.css'
 const ExpoComponent=()=>{
+
+    const [expo,setexpo]=useState(['']);
+    fetch('http://localhost:3001/Expo')
+       .then(response=>response.json())
+       .then(Expo=>setexpo(Expo))
+       .catch(error=>console.log(error.message));
+    
+    
 const Cardi=expo.map((item)=>{
     return(
         <div className="col-md-6">

@@ -1,8 +1,8 @@
 import react, {useState} from 'react';
 import {Card, CardBody,Input, CardFooter,CardImg, CardTitle} from 'reactstrap';
-import Jobss from './jobs';
+import Jobss from './jobsItemescomponent';
 import '../Jobs.css'
-import {jobs} from '../shared/Jobs';
+
 
 
 
@@ -10,6 +10,11 @@ import {jobs} from '../shared/Jobs';
 const JobsComponent=()=>{
    const [post,setpost]=useState('');
    const [entreprise,setentreprise]=useState('');
+   const [jobs,setJobs]=useState(['']);
+   fetch('http://localhost:3001/Jobs')
+     .then(response=>response.json())
+    .then(Jobs=>setJobs(Jobs))
+    .catch(error=>console.log(error.message));
    function ppost(event){
     setpost(event.target.value);
    }
@@ -42,7 +47,7 @@ Corps invitee au Forum</h5>
   </div>
   <div className="container pt-5">
  
-         <Jobss jobs={jobs.filter((x)=>x.name==post && x.entreprise==entreprise)}/>
+         <Jobss jobs={jobs.filter((x)=>(entreprise=='' && post=='') || (x.name.includes(post) && x.entreprise.includes(entreprise ))|| (x.name.includes(post) && entreprise=='') || ( x.entreprise.includes(entreprise ) && post=='' ))} />
 
    </div>
 </div>
