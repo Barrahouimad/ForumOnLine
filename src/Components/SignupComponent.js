@@ -43,10 +43,25 @@ const SignupComponent=()=>{
     setpass2(event.target.value);
    
   }
-  function handlvalue(input){
-    alert(input);
-    setemail(input);
-  }
+  function handlsubmit(event){
+    event.preventDefault(); 
+    const newaccount ={
+      fullname:event.target.fullname.value,
+      email:event.target.email.value,
+      password:event.target.pass.value,
+      phonenumber:event.target.number.value
+    };
+    alert(JSON.stringify(newaccount));
+   fetch("http://localhost:3001/accounts",{
+        method:'POST',
+        body:JSON.stringify(newaccount),
+        headers:{
+          "Content-Type" : "application/json"
+          },
+          credentials :"same-origin"
+
+
+  });}
     function validate(email,name,nametouched,emailtouched){
       const errors ={
         email:'',
@@ -76,20 +91,20 @@ const SignupComponent=()=>{
 
 return(
  <div id="signup" className="container pb-5">
-    <Form>
+    <Form onSubmit={handlsubmit}>
        <FormGroup row>
-         <Input type="text" placeholder="Full Name" valid={errors.name===''} invalid={errors.name!==''}
+         <Input type="text" placeholder="Full Name" name="fullname" valid={errors.name===''} invalid={errors.name!==''}
       onChange={(event)=>handlchangename(event)}   onBlur={()=>handlBlurname()}   />
          <FormFeedback>{errors.name}</FormFeedback>
        </FormGroup>
        <FormGroup row>
-         <Input type="email" placeholder="Email" valid={errors.email===''} invalid={errors.email!==''}
+         <Input type="email" placeholder="Email" name="email" valid={errors.email===''} invalid={errors.email!==''}
            onBlur={()=>handlBluremail(!nametouched)}onChange={(event)=>handlchangeemail(event)}/>
             <FormFeedback>{errors.email}</FormFeedback>
        </FormGroup> 
         
        <FormGroup row>
-         <Input type="password" placeholder="Password" onBlur={()=>handlBlurpass2()} onChange={(event)=>handlchangepass2(event)}/>
+         <Input type="password" placeholder="Password" name="pass" onBlur={()=>handlBlurpass2()} onChange={(event)=>handlchangepass2(event)}/>
        </FormGroup>
        <FormGroup row>
          <Input type="password" placeholder="Confirme Password" valid={errors.pass===''} invalid={errors.pass!==''}
@@ -97,14 +112,14 @@ return(
          <FormFeedback>{errors.pass}</FormFeedback>
        </FormGroup>
        <FormGroup row>
-         <Input type="number" placeholder="Phone Number"/>
+         <Input type="number" name="number" placeholder="Phone Number"/>
        </FormGroup>
        <FormGroup row>
            <Label  className="text-danger"  htmlfor="cv">Your CV</Label>
-         <Input name="cv"type="file" >Your CV</Input>
+         <Input type="file" >Your CV</Input>
        </FormGroup>
        <FormGroup className="ml-4"row>
-         <Button >Connect</Button>
+         <Button outline type="submit"  >Connect</Button>
        </FormGroup>
     </Form>
  </div>
