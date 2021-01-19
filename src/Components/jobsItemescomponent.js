@@ -1,6 +1,6 @@
 import React from 'react';
 import '../Jobs.css'
-import {Card, CardBody,Input, CardFooter,CardImg, CardTitle} from 'reactstrap';
+import {Card, CardBody,Input, CardFooter,CardImg, CardTitle,Button} from 'reactstrap';
 
 
 const Jobss =(props)=>{
@@ -8,7 +8,7 @@ const Jobss =(props)=>{
         return(
           
                     <div className="space-between">
-                  <p className="bg-info">#{item.hashtags}</p>
+                  <p  style={{background:"#FFEEEE" , color:"#F76060"}}>#{item.hashtags}</p>
                   </div>
               
           );}
@@ -16,19 +16,22 @@ const Jobss =(props)=>{
        
     const Cardi=props.jobs.map((item)=>{
         return(
-            <div className="col-md-6">
-      <Card color="light" key={item.id} width="70px">
+         
+            <div className="col-md-6 pt-5" >
+                   <div class="cards" id={item.id} style={{border: "1px solid #FDCBCB" , borderRadius: "68px"}}>
+      
           <CardBody>
-          <CardTitle  ><bold>{item.name}</bold></CardTitle>
+          <CardTitle  ><bold style={{color:"#FB6161" , fontSize:40}}>{item.name}</bold></CardTitle>
               <h5 class="titre">{item.entreprise}  </h5>
               <p>{item.desc}</p>
               <div className="d-flex">
-                  
-              <p>{hash}</p>
+              <p  style={{background:"#FFEEEE" , color:"#F76060"}}>#{item.hashtags}</p>
            
                 </div>
+                <Button outline className="ml-4" href={`/Jobs/${item.id}`}>Apply</Button>
           </CardBody>
-      </Card>
+   
+      </div>
       </div>);
     });
 

@@ -1,6 +1,6 @@
 import react,{useState} from 'react';
 import {Form, FormGroup,FormFeedback,FormText,Label,Input, Button} from 'reactstrap';
-
+import {useHistory } from 'react-router-dom' ;
 
 const SignupComponent=()=>{
   const [email,setemail]=useState('');
@@ -11,6 +11,7 @@ const SignupComponent=()=>{
   const [passtouched,setpasstouched]=useState(false);
   const [pass2,setpass2]=useState('');
   const [pass2touched,setpass2touched]=useState(false);
+  let history = useHistory();
   function handlBluremail(){
     setemailtouched(!emailtouched);
 
@@ -51,7 +52,7 @@ const SignupComponent=()=>{
       password:event.target.pass.value,
       phonenumber:event.target.number.value
     };
-    alert(JSON.stringify(newaccount));
+    /*alert(JSON.stringify(newaccount));
    fetch("http://localhost:3001/accounts",{
         method:'POST',
         body:JSON.stringify(newaccount),
@@ -61,7 +62,15 @@ const SignupComponent=()=>{
           credentials :"same-origin"
 
 
-  });}
+  });*/
+ 
+  history.push({
+    pathname: '/Home',
+    state: {  
+      update: true, 
+    },
+  });
+}
     function validate(email,name,nametouched,emailtouched){
       const errors ={
         email:'',
@@ -90,8 +99,9 @@ const SignupComponent=()=>{
      console.log(errors.email+'the email : '+eemail+' the name'+nname + ' hy  ' + errors.name);
 
 return(
- <div id="signup" className="container pb-5">
-    <Form onSubmit={handlsubmit}>
+ <div id="signup" className="container pb-5" style={{top: "100px",height:"500px",width: "866px",border:"1px solid  #FFFFF" , borderRadius: "68px",background:" #FFFFF1 0% 0% no-repeat padding-box", boxShadow: "10px 10px 10px #DADADA29"}}>
+   <div className="container pb-5"  >
+      <Form onSubmit={handlsubmit}>
        <FormGroup row>
          <Input type="text" placeholder="Full Name" name="fullname" valid={errors.name===''} invalid={errors.name!==''}
       onChange={(event)=>handlchangename(event)}   onBlur={()=>handlBlurname()}   />
@@ -119,9 +129,11 @@ return(
          <Input type="file" >Your CV</Input>
        </FormGroup>
        <FormGroup className="ml-4"row>
-         <Button outline type="submit"  >Connect</Button>
+         <Button  type="submit" className="bg-success" >Connect</Button>
+         <Button type="submit"outline className="ml-5" href={"/Login"}>Have account ?</Button>
        </FormGroup>
     </Form>
+ </div>
  </div>
 );
 

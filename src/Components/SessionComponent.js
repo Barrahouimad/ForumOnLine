@@ -1,0 +1,1 @@
+import HeadeComponent from '../Components/headerComponent.js';

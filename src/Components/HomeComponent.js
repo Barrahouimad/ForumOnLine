@@ -1,4 +1,4 @@
-import react from 'react';
+import react ,{useState}from 'react';
 import { makeStyles } from '@material-ui/styles';
 import '../font.css'
 import {Button, NavLink,Image, NavbarBrand} from 'reactstrap';
@@ -6,17 +6,17 @@ import { Link } from 'react-router-dom';
 import { RiFacebookBoxFill } from 'react-icons/ri';
 import {SiLinkedin} from 'react-icons/si';
 import {AiFillTwitterSquare} from 'react-icons/ai';
-import $ from 'jquery';
-
-
 import 'bootstrap-social/bootstrap-social.css';
-import { findDOMNode } from 'react-dom';
-function Home(){
- 
+import HeadeComponent from '../Components/headerComponent.js';
+import { useLocation } from 'react-router-dom';
+
+function Home(props){
+  // const location = useLocation();
+   const head = <HeadeComponent varaccess="{location.state.update}" />
   return(
-       <footer>
-        
-          <div id='home' >
+       <div id="home">
+      {head}
+          <div  >
              
               <h1 id="text" className="text-secondary pt-5 pl-5 ">
                   FORUM <strong id="spin" className="text-danger">EMI</strong> ENTREPRISE
@@ -35,7 +35,7 @@ function Home(){
       
              <div id='buttons' className="row "> 
                 <div  id="btn1" class ="effet" style={{border :'2px solid ',fontSize:'35px',borderColor:'#CDCACA',color:'#CDCACA',paddingtop:"14px",paddingLeft:"14px"}}>
-                <NavLink className="pt-1 text-light" href={"/Signup"} > Signup</NavLink>
+                <NavLink className="pt-1 text-light"  href={"/Signup"} > Signup</NavLink>
                </div>
                <div  id="btn2" class ="effet" style={{border:'2px solid ',borderright : "5px",fontSize:'35px',borderColor:'#CDCACA',color:'#CDCACA',paddingRight:"12px",paddingLeft:"14px"}}>
                   <NavLink className="pt-1 text-light" href={"/Login"}> Log in</NavLink>
@@ -44,7 +44,7 @@ function Home(){
             </div>
          </div>
  
-      </footer>
+      </div>
 
   );
 
