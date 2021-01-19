@@ -29,6 +29,9 @@ import SessionComponent from '../Components/SessionComponent.js';
 
 function Maincommponent(){
 
+  
+  
+const Expoid =({match})=>{
   const fetcher=(url)=>fetch(url).then(res=>{return res.json()})
   const {data, error} =useSWR('http://localhost:3001/Expo',fetcher)
 
@@ -39,10 +42,22 @@ function Maincommponent(){
       //we always have to use this if 
     <ImSpinner9 style={{fontSize:"250px", marginLeft:"580px", marginTop:"140px"}} id='spin'/> 
 );}
-  
-const Expoid =({match})=>{
 
 return(<EntrepExpo expo={data.filter((x)=>x.id===parseInt(match.params.idexpo,10))[0]}/>);
+}
+const Jobid =({match})=>{
+  const fetcher=(url)=>fetch(url).then(res=>{return res.json()})
+  const {data, error} =useSWR('http://localhost:3001/Jobs',fetcher)
+
+  if(error){
+      return <p>faild to load</p>
+  }
+  if(!data){return( 
+      //we always have to use this if 
+    <ImSpinner9 style={{fontSize:"250px", marginLeft:"580px", marginTop:"140px"}} id='spin'/> 
+);}
+
+return(<Apply expo={data.filter((x)=>x.id===parseInt(match.params.idjob,10))[0]}/>);
 }
 
  return(<div>
@@ -53,7 +68,7 @@ return(<EntrepExpo expo={data.filter((x)=>x.id===parseInt(match.params.idexpo,10
         <Route exact path ='/Expo' component={ExpoComponent}/>
         <Route path="/login" component={LoginComponent}/>
         <Route path  ='/Expo/:idexpo' component={Expoid}/>
-        <Route path  ='/Jobs/:idjob' component={Apply}/>
+        <Route path  ='/Jobs/:idjob' component={Jobid}/>
         <Route path='/Jobs' component={JobsComponent}/>
         <Redirect path='/Home'component={Home}/>
      </Switch>
