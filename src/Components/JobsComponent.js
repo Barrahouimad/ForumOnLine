@@ -2,7 +2,7 @@ import react, {useState} from 'react';
 import {Input} from 'reactstrap';
 import { Spinner } from 'reactstrap';
 import Jobss from './jobsItemescomponent';
-import {ImSpinner10} from 'react-icons/im';
+import {ImSpinner6} from 'react-icons/im';
 import '../Jobs.css'
 import useSWR from 'swr'
 import HeadeComponent from '../Components/headerComponent.js';
@@ -32,7 +32,7 @@ const JobsComponent=()=>{
 emploie <br/> presentees Startups, Sociétés
 Corps invitee au Forum</h5>
 </div>    
-                   <ImSpinner10 style={{fontSize:"300px", marginLeft:"380px", marginTop:"80px", animation:"infinite 1s"}} id='spin'/> 
+                   <ImSpinner6 style={{fontSize:"300px", marginLeft:"380px", marginTop:"80px"}} id='spin'/> 
               </div>);
    function ppost(event){
     setpost(event.target.value);

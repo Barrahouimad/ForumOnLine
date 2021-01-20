@@ -18,7 +18,7 @@ const useStyles = makeStyles({
 
 function HeadeComponent(props){
   
-  const [sessionaccess,setaccess]=useState(false);
+ 
   const [key,setkey]=useState(false);
   const classes = useStyles();
   const changekey=()=>{setkey(!key)};
@@ -49,11 +49,14 @@ function HeadeComponent(props){
    }
   },[]);
     
-
+  const [sessionaccess,SetAcces]=useState(false);
+  useEffect(()=>{
    if(props.varaccess){
+     console.log("hiiiiii "+props.varaccess +"  session "+sessionaccess);
   //  alert('hey'+props.varaccess);
-    //setaccess(true);
-  }
+
+    SetAcces(true) } });
+ 
    if(sessionaccess){
     return(
 
@@ -81,10 +84,10 @@ function HeadeComponent(props){
 
 
     );}
-    else{
+    else if(!sessionaccess){
       return(
     <div >
-    <Navbar id='header' expand="md" className={classes.root} >
+    <Navbar id='header' expand="md" >
        <NavbarBrand className="mr-auto" ><img src='assets/logo1.png' height="30" width="41"/></NavbarBrand>
       
           <Nav className="mr-auto"  navbar>

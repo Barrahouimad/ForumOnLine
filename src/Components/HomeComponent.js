@@ -1,4 +1,4 @@
-import react ,{useState}from 'react';
+import react ,{useEffect, useState}from 'react';
 import { makeStyles } from '@material-ui/styles';
 import '../font.css'
 import {Button, NavLink,Image, NavbarBrand} from 'reactstrap';
@@ -11,11 +11,11 @@ import HeadeComponent from '../Components/headerComponent.js';
 import { useLocation } from 'react-router-dom';
 
 function Home(props){
-  // const location = useLocation();
-   const head = <HeadeComponent varaccess="{location.state.update}" />
+   const location = useLocation();
+   const head = <HeadeComponent varaccess={(location.state)?location.state.update:false} />
   return(
-       <div id="home">
-      {head}
+       <footer id="home">
+          {head}
           <div  >
              
               <h1 id="text" className="text-secondary pt-5 pl-5 ">
@@ -44,7 +44,7 @@ function Home(props){
             </div>
          </div>
  
-      </div>
+      </footer>
 
   );
 

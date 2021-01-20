@@ -1,9 +1,10 @@
 import react , {useState} from 'react';
 import {Form, FormGroup,FormFeedback,FormText,Label,Input, Button} from 'reactstrap';
-
+import {useHistory } from 'react-router-dom' ;
 
 
 const LoginComponent=()=>{
+  let history = useHistory();
     const [email,setemail]=useState('');
     const [pass,setpass]=useState('');
     const [emailtouched,setemailtouched]=useState(false);
@@ -44,7 +45,16 @@ const LoginComponent=()=>{
             credentials :"same-origin"
   
   
-    });}
+    });
+    history.push({
+      pathname: '/Home',
+      state: {  
+        update: true, 
+      },
+    });
+
+  
+  }
     var eemail= email+'';
     const error=validate(eemail,emailtouched);
 return(
