@@ -30,13 +30,15 @@ const LoginComponent=()=>{
        
     }
     function handlsubmit(event){
-      event.preventDefault(); 
-      const account ={
+      const error=validate(event.target.email.value,true);
+    if(error.email === '') {
+       event.preventDefault(); 
+       /*  const account ={
         email:event.target.email.value,
         pass:event.target.pass.value,
       };
-      alert(JSON.stringify(account));
-     fetch("http://localhost:3001/accounts",{
+
+  fetch("http://localhost:3001/accounts",{
           method:'POST',
           body:JSON.stringify(account),
           headers:{
@@ -45,13 +47,13 @@ const LoginComponent=()=>{
             credentials :"same-origin"
   
   
-    });
+    });*/
     history.push({
       pathname: '/Home',
       state: {  
         update: true, 
       },
-    });
+    });}
 
   
   }
@@ -59,9 +61,9 @@ const LoginComponent=()=>{
     const error=validate(eemail,emailtouched);
 return(
     
-<div id="login" className="container pb-5" style={{top: "100px",height:"500px",width: "866px",border:"1px solid  #FFFFF" , borderRadius: "68px",background:" #FFFFF1 0% 0% no-repeat padding-box", boxShadow: "10px 10px 10px #DADADA29"}}>
+<div id="login" className="container mt-5 pb-5" style={{top: "100px",height:"500px",width: "866px",border:"1px solid  #FFFFF" , borderRadius: "68px",background:" #FFFFF1 0% 0% no-repeat padding-box", boxShadow: "10px 10px 10px #DADADA29"}}>
    <div className="container pb-5"  >
-    <Form onsubmit={handlsubmit}>
+    <Form onSubmit={handlsubmit}>
        <FormGroup row>
          <Input type="text" name="email" placeholder="Username"  
                                         valid={error.email === ''}
@@ -76,8 +78,8 @@ return(
          
        </FormGroup>
        <FormGroup className="ml-5"row>
-         <Button href={"/home"} type="submit" >Connect</Button>
-         <Button type="submit" className="bg-success ml-5" href={"/signup"}>Sign up</Button>
+         <Button  type="submit" >Connect</Button>
+         <Button  className="bg-success ml-5" href={"/signup"}>Sign up</Button>
        </FormGroup>
     </Form>
  </div>

@@ -3,7 +3,7 @@ import HeadeComponent from '../Components/headerComponent.js';
 import Home from '../Components/HomeComponent.js';
 import useSWR from 'swr'
 import {ImSpinner9} from 'react-icons/im';
-
+import Session from '../Components/SessionComponent.js';
 import Apply from '../Components/ApplyComponent.js';
 import LoginComponent from '../Components/LoginComponent.js';
 import SignupComponent from '../Components/SignupComponent.js';
@@ -12,14 +12,14 @@ import JobsComponent from '../Components/JobsComponent.js';
 import EntrepExpo from '../Components/EntrepExpo.js';
 import React,{useState} from 'react';
 /*import WelcomeComponent from '../Components/WelcomeComponent.js';
-import SessionComponent from '../Components/SessionComponent.js';
+
 
  <Switch>
 
        
        
        
-        <Route path='/Session' component={SessionComponent}/>
+
     </Switch>
 
 
@@ -69,6 +69,7 @@ return(<Apply expo={data.filter((x)=>x.id===parseInt(match.params.idjob,10))[0]}
         <Route path="/login" component={LoginComponent}/>
         <Route path  ='/Expo/:idexpo' component={Expoid}/>
         <Route path  ='/Jobs/:idjob' component={Jobid}/>
+        <Route path='/Session' component={Session}/>
         <Route path='/Jobs' component={JobsComponent}/>
         <Redirect path='/Home'component={Home}/>
      </Switch>

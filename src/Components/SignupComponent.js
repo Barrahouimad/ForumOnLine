@@ -45,7 +45,8 @@ const SignupComponent=()=>{
    
   }
   function handlsubmit(event){
-    event.preventDefault(); 
+    const errors=validate(event.target.email.value,event.target.fullname.value,true,true);
+    if(errors.email === '' && errors.name===''){ event.preventDefault(); 
     const newaccount ={
       fullname:event.target.fullname.value,
       email:event.target.email.value,
@@ -69,7 +70,7 @@ const SignupComponent=()=>{
     state: {  
       update: true, 
     },
-  });
+  });}
 }
     function validate(email,name,nametouched,emailtouched){
       const errors ={
@@ -99,7 +100,7 @@ const SignupComponent=()=>{
      console.log(errors.email+'the email : '+eemail+' the name'+nname + ' hy  ' + errors.name);
 
 return(
- <div id="signup" className="container pb-5" style={{top: "100px",height:"500px",width: "866px",border:"1px solid  #FFFFF" , borderRadius: "68px",background:" #FFFFF1 0% 0% no-repeat padding-box", boxShadow: "10px 10px 10px #DADADA29"}}>
+ <div id="signup" className="container pb-5 mt-5" style={{top: "100px",height:"500px",width: "866px",border:"1px solid  #FFFFF" , borderRadius: "68px",background:" #FFFFF1 0% 0% no-repeat padding-box", boxShadow: "10px 10px 10px #DADADA29"}}>
    <div className="container pb-5"  >
       <Form onSubmit={handlsubmit}>
        <FormGroup row>
@@ -130,7 +131,7 @@ return(
        </FormGroup>
        <FormGroup className="ml-4"row>
          <Button  type="submit" className="bg-success" >Connect</Button>
-         <Button type="submit"outline className="ml-5" href={"/Login"}>Have account ?</Button>
+         <Button outline className="ml-5" href={"/Login"}>Have account ?</Button>
        </FormGroup>
     </Form>
  </div>
