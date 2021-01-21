@@ -1,7 +1,7 @@
 import {react, useState,useEffect} from 'react';
 import { Navbar ,Jumbotron,NavbarToggler,NavLink,NavItem,Nav,Collapse,NavbarBrand,Modal,ModalHeader,ModalBody ,Button, Label, Form, FormGroup ,Input ,Col} from 'reactstrap';
 //import {NavLink} from 'react-router-dom';
-
+import {BsPerson} from 'react-icons/bs'
 
 import { makeStyles } from '@material-ui/styles';
 import $ from 'jquery';
@@ -64,7 +64,7 @@ function HeadeComponent(props){
    <Navbar id='header' expand="md" >
       <NavbarBrand className="mr-auto" ><img src='assets/logo1.png' height="30" width="41"/></NavbarBrand>
      
-         <Nav className="mr-auto"  navbar>
+         <Nav className="mr-auto" style={{marginLeft:"550px"}} navbar>
             <NavItem>
               <NavLink id="HomeNav" href="/Home"   >HOME</NavLink>
             </NavItem>
@@ -77,6 +77,7 @@ function HeadeComponent(props){
             <NavItem>
               <NavLink id="JobsNav" href="/Jobs"   >JOBS</NavLink>
             </NavItem>
+              <div className="" style={{borderRadius:"100%",background:"white",width:"30px",paddingLeft:"8px",paddingTop:"4px", marginLeft:"602px"}} ><BsPerson className="wd-5"/></div>
          </Nav>
        
     </Navbar>
@@ -90,7 +91,7 @@ function HeadeComponent(props){
     <Navbar id='header' expand="md" >
        <NavbarBrand className="mr-auto" ><img src='assets/logo1.png' height="30" width="41"/></NavbarBrand>
       
-          <Nav className="mr-auto"  navbar>
+          <Nav className="mr-auto" style={{marginLeft:"550px"}} navbar>
              <NavItem>
                <NavLink id="HomeNav" href="/Home"   >HOME</NavLink>
              </NavItem>
@@ -103,6 +104,7 @@ function HeadeComponent(props){
              <NavItem>
                <NavLink id="JobsNav" href="/Jobs"   >JOBS</NavLink>
              </NavItem>
+             <div className="" style={{borderRadius:"100%",background:"white",width:"30px",paddingLeft:"8px",paddingTop:"4px", marginLeft:"602px"}} ><BsPerson className="wd-5"/></div>
           </Nav>
         
      </Navbar>
