@@ -4,9 +4,9 @@ import { Spinner } from 'reactstrap';
 import Jobss from './jobsItemescomponent';
 import {ImSpinner6} from 'react-icons/im';
 import '../Jobs.css'
+import '../maincss.css'
 import useSWR from 'swr'
 import HeadeComponent from '../Components/headerComponent.js';
-  
 
 
 
@@ -67,9 +67,9 @@ Corps invitee au Forum</h5>
        
   </div>
   <div className="container pt-5">
- 
+
          <Jobss jobs={data.filter((x)=>(entreprise=='' && post=='') || (x.name.includes(post) && x.entreprise.includes(entreprise ))|| (x.name.includes(post) && entreprise=='') || ( x.entreprise.includes(entreprise ) && post=='' ))} />
-         
+       
    </div>
 </div>
 </div>

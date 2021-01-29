@@ -2,7 +2,6 @@ import {react, useState,useEffect} from 'react';
 import { Navbar ,Jumbotron,NavbarToggler,NavLink,NavItem,Nav,Collapse,NavbarBrand,Modal,ModalHeader,ModalBody ,Button, Label, Form, FormGroup ,Input ,Col} from 'reactstrap';
 //import {NavLink} from 'react-router-dom';
 import {BsPerson} from 'react-icons/bs'
-
 import { makeStyles } from '@material-ui/styles';
 import $ from 'jquery';
 

@@ -11,6 +11,9 @@ import ExpoComponent from '../Components/ExpoComponent.js';
 import JobsComponent from '../Components/JobsComponent.js';
 import EntrepExpo from '../Components/EntrepExpo.js';
 import React,{useState} from 'react';
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
+
+import '../maincss.css'
 /*import WelcomeComponent from '../Components/WelcomeComponent.js';
 
 
@@ -61,7 +64,8 @@ return(<Apply expo={data.filter((x)=>x.id===parseInt(match.params.idjob,10))[0]}
 }
 
  return(<div>
-
+         <TransitionGroup>
+         <CSSTransition class="page" timeout={300}>
       <Switch>
         <Route path='/Home' component={Home}/>
         <Route path='/Signup' component={SignupComponent}/>
@@ -71,8 +75,10 @@ return(<Apply expo={data.filter((x)=>x.id===parseInt(match.params.idjob,10))[0]}
         <Route path  ='/Jobs/:idjob' component={Jobid}/>
         <Route path='/Session' component={Session}/>
         <Route path='/Jobs' component={JobsComponent}/>
-        <Redirect path='/Home'component={Home}/>
+        <Redirect path='/Home'/>
      </Switch>
+     </CSSTransition>
+      </TransitionGroup>  
         </div>
 );
 

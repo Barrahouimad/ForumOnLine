@@ -6,6 +6,7 @@ import {useHistory } from 'react-router-dom' ;
 const LoginComponent=()=>{
   let history = useHistory();
     const [email,setemail]=useState('');
+    const [accounts,setAccount]=useState(['']);
     const [pass,setpass]=useState('');
     const [emailtouched,setemailtouched]=useState(false);
     function validate(email,emailtouched) {
@@ -33,21 +34,14 @@ const LoginComponent=()=>{
       const error=validate(event.target.email.value,true);
     if(error.email === '') {
        event.preventDefault(); 
-       /*  const account ={
+         const account ={
         email:event.target.email.value,
         pass:event.target.pass.value,
       };
 
-  fetch("http://localhost:3001/accounts",{
-          method:'POST',
-          body:JSON.stringify(account),
-          headers:{
-            "Content-Type" : "application/json"
-            },
-            credentials :"same-origin"
-  
-  
-    });*/
+  fetch("http://localhost:3001/accounts")
+    .then(response=>response.json)
+    .then(Accounts=>setAccount(Accounts))
     history.push({
       pathname: '/Home',
       state: {  

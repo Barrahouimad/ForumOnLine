@@ -4,6 +4,7 @@ import {useHistory } from 'react-router-dom' ;
 
 const SignupComponent=()=>{
   const [email,setemail]=useState('');
+  const [Number,setNumber]=useState(8);
   const [emailtouched,setemailtouched]=useState(false);
   const [name,setname]=useState('');
   const [nametouched,setnametouched]=useState(false);
@@ -47,28 +48,35 @@ const SignupComponent=()=>{
   function handlsubmit(event){
     const errors=validate(event.target.email.value,event.target.fullname.value,true,true);
     if(errors.email === '' && errors.name===''){ event.preventDefault(); 
+      fetch('http://localhost:3001/Accounts')
+      .then(response=>response.json())
+      .then(Accounts=>setNumber(Accounts.length))
+      .catch(error=>console.log(error.message));
     const newaccount ={
+      id:Number,
       fullname:event.target.fullname.value,
       email:event.target.email.value,
       password:event.target.pass.value,
       phonenumber:event.target.number.value
     };
-    /*alert(JSON.stringify(newaccount));
-   fetch("http://localhost:3001/accounts",{
+  
+   fetch("http://localhost:3001/Accounts",{
         method:'POST',
         body:JSON.stringify(newaccount),
         headers:{
-          "Content-Type" : "application/json"
+          "Content-Type" : "application/json",
+          "Access-Cotrol-Origin":"*"
           },
           credentials :"same-origin"
 
 
-  });*/
+  })
+   
  
   history.push({
     pathname: '/Home',
     state: {  
-      update: true, 
+      update: true  , 
     },
   });}
 }
