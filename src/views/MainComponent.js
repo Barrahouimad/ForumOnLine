@@ -67,7 +67,8 @@ return(<Apply expo={data.filter((x)=>x.id===parseInt(match.params.idjob,10))[0]}
          <TransitionGroup>
          <CSSTransition class="page" timeout={300}>
       <Switch>
-        <Route path='/Home' component={Home}/>
+        <Route path='/' component={Home}/>
+        <Route path='/home' component={Home}/>
         <Route path='/Signup' component={SignupComponent}/>
         <Route exact path ='/Expo' component={ExpoComponent}/>
         <Route path="/login" component={LoginComponent}/>
